@@ -3,7 +3,8 @@ def left(i: int):
     return  2*i
 def right(i: int):
     return 2*i+1
-
+def parent (i: int):
+    return i//2
 def max_heapify(A: List[int], i:int):
     p = left(i)
     q = right(i)
