@@ -19,11 +19,21 @@ def solve(A: List[int]) -> bool:
     False
     >>> solve([])
     
+    >>> solve([1])
+    True
+    >>> solve([9])
+    False
     """
     total = sum(A)
     if len(A)==0:
         return None
+    if len(A) == 1:
+        if A[0] == 1:
+            return True
+        else:
+            return False
     max_heap(A)
+   
     while A[0]>1:
         max = A[0]
         if max <= total - max: #тому що перед тим там мало бути ще хоча б число 1
@@ -32,5 +42,5 @@ def solve(A: List[int]) -> bool:
         insert(A, max%(total-max))   
         total = total - max + max%(total-max)        
     return True
-# print(solve([9, 5, 3]))
+# print(solve([9]))
 # doctest.testmod()
